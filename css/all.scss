@@ -1,0 +1,669 @@
+@import 'menu';
+@import 'modules';
+@import 'components';
+@import url("//fonts.googleapis.com/css?subset=latin%2Clatin-ext&family=Open%20Sans");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Raleway);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+
+/*define global variables*/
+
+$HeaderSpaceHeight:610px;
+$HeaderBackground: #e4f6ae;
+$BodyBigFont:15pt;
+$BodySmallFont:10pt;
+$ShadowTextColor: #888;
+$ContentTblWidth:1224px;
+$MenuBg: #595740;
+$menuFont: "Tahoma, Geneva, sans-serif";
+$PalatinoFont:"Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif";
+$secondFont: "Arial, Helvetica, sans-serif";
+$defaultTxtColor: #000;
+$numberOfBox:3;
+
+$numberOfHozBox:3;
+@font-face {
+  font-family: 'bodyFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+*,html{margin:0;padding:0; font-size:12pt;}
+body
+{
+    
+}
+div#Content-Outer{
+        height:100%; width:100%; margin: auto auto; text-align: center;
+    }
+
+/********************************
+   Start Navigation Block
+ ********************************
+ */
+
+//@import 'navigation.scss';
+
+
+
+div#Site-Nav
+{
+
+    width: 100%;
+    //box-sizing: border-box;
+    @include menu; // opacity:0.75;
+    @include BoxShadow(#000,0,1px,5px);
+    font-size: 15pt;
+    height:90px;
+    min-height:90px;
+    line-height:90px;
+    z-index:1;
+    background:#fff;
+   //background:#303b3b;
+    border-bottom:5px solid #0675b3;
+    //opacity:.6;
+    //background: linear-gradient(left,rgba(56,170,171,0),rgba(255,0,0,1));
+    @include transition(all,.5s,linear);
+    button{
+                @extend button; color:#fff;
+                position:absolute;
+                top:0;right:0;
+                //margin-top:50%;
+
+                display:none;
+
+            }
+    div.company-name-combine
+    {
+
+        @include TextShadow(#888);
+        @include transition(all,.5s,linear);
+        position: absolute;
+        box-sizing: border-box;
+        text-align: left; font-size:18pt; color: #fff;
+        width:253px;
+        height:90px;
+        font-family: $menuFont;
+       
+        img
+        {
+          width:253px;
+          height:90px;
+        }
+
+    }
+
+}
+
+/********************************
+   End of Navigation Block
+ ********************************
+ */
+
+/********************************
+  Start Company Header Block
+ ********************************
+ */
+ div.banner
+    {
+        position: absolute;
+        top:45%; left:0;
+        width:83%;
+        margin-left:8.8%;
+        //margin: 9% 9%;
+        height:40px;
+        background: #1eb2df;
+        border-sizing:"border-box";
+        color: #fff;
+        line-height:40px;
+        text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+        box-shadow: inset 0px 1px 0px rgba(255,255,255,.3),
+                                inset 0px 0px 20px rgba(0,0,0,0.1),
+                                0px 1px 1px rgba(0,0,0,0.4);
+       //background: linear-gradient(top,#1eb2df, #1eb2df);
+       display: inline-block;
+
+      &:before,&:after
+      {
+       content: "";
+       //width:.2em;
+       bottom:-15px;
+       position:absolute;
+       display:block;
+       border: 20px solid #1eb2df;
+       box-shadow:0px 1px 0px rgba(0,0,0,0.4);
+       z-index:-2;
+      }
+      &:before
+      {
+         // left:-45px;
+          left:-25px;
+          //border-right-width: .75em;
+          border-left-color:transparent;
+      }
+
+      &:after {
+		right:-20px;
+
+		//border-left-width: .75em;
+		border-right-color:transparent;
+	}
+        .ribbon
+        {
+                    //padding:2px;
+             animation: moveX .2s ease;
+                -webkit-animation: moveX 2s ease;
+                    &:before,&:after
+                    {
+                       content:"";
+                        bottom:-15px;
+                        position:absolute;
+                        display:block;
+                        border-style:solid;
+                        border-color: #0675b3 transparent transparent transparent;
+                        z-index:-1;
+
+                    }
+                     &:before
+                    {
+                        left:-3px;
+                        border-width:20px 0 0 19px;
+                    }
+                     &:after
+                    {
+                        right:0;
+                       border-width:20px 19px 0 0 ;
+                    }
+        }
+
+
+    }
+
+div.hoz-content
+{
+    width:100%;
+    height:280px;
+    background: #fff;
+}
+div#Company-Space
+{
+    position: relative;
+    width:100%;    height:420px;
+    margin: auto auto;
+    display: block;
+    @include TextShadow($ShadowTextColor);
+    @include BoxShadow(#888,1px,1px,5px);
+
+
+    background: #fff;
+    &:after{
+                @extend .no-float;
+
+
+            }
+
+    /******style company*/
+    img
+    {
+            opacity:0;
+            position: absolute;
+            width:100%;
+            height:100%;
+            display: block;
+            top:0;
+            margin:0;
+            @include transition(all,2s,ease);
+            perspective: 1700px;
+    }
+    div.mainSwitch{
+
+            opacity:1;
+            position: absolute;
+            width:100%;
+            height: auto;
+            display: block;
+            box-sizing: border-box;
+            top:0;
+            margin:0;
+            perspective: 1700px;
+            z-index:3;
+           // overflow: hidden;
+
+
+    }
+
+
+    .custom
+    {
+
+                position: absolute;
+                z-index:5;
+                width: 90%;
+                height: 80px;
+                opacity:0;
+                @include StandardText(#fff,10pt,"Vollkorn",left,bold,uppercase);
+                top:40%;
+                left:10%;
+                animation: moveX .2s ease;
+                -webkit-animation: moveX 2s ease;
+                box-sizing: border-box;
+               
+                //text-indent:55px;
+                div.story
+                {
+                  width:100%;
+                  height: auto;
+                  @include StandardText(#fff,10pt,"Open Sans",left,300,none);
+                  font-style: italic;
+                  text-indent:10px;
+                   
+                }
+                span.slogan,span.slogan.green,.black
+                {
+                  @include StandardText(#fff,10pt,"Open Sans Condensed",center,bold,none);
+                  margin: auto auto;
+                  width: 400px;
+                  line-height:30px;
+                  display: block;
+                  @include TextShadow(#888);
+                  //transform: translateX(150px);
+                  //animation: circle-color 1s ease;
+                }
+                span.slogan.green{color: #3d483d;}
+                span.slogan.black{color: #fff;}
+                a
+                {
+                        perspective:1700px;
+                        margin: auto auto;
+                        width: 120px;
+                        height:40px;
+                        display: block;
+                        border:4px solid #ddd;
+                        animation: dis-app 2s ease;
+                        -webkit-transform: dis-app 2s ease;
+                        background: #888;
+                        line-height:40px;
+                        @include StandardText(#fff,10pt,"Open Sans Condensed",center,bold,uppercase);
+                        @include BoxShadow(#000);
+                }
+    }
+}
+div.service
+{
+        height:100px;
+        line-height:50px;
+        width:100%;
+        position: relative;
+        ///background: #ddd;
+        opacity:0;
+        background: linear-gradient(-125deg,#ddd 0%,  #eae9e9 100%);
+        //background: #99ffff;
+        display: block;
+        @include TextShadow(#888,-2px);
+        @include StandardText(#000,15pt,"Open Sans Condensed",center,bold,uppercase);
+        @include transition(all,.5s,linear);
+        //background: #0881c4;
+        span
+        {
+            @extend div.service;
+            display: block;
+            line-height:30px;
+            height:15px;
+            width:100%;
+            opacity:1;
+            @include StandardText(#000,10pt,"Open Sans Condensed",center,bold,uppercase);
+            //@include TextShadow(#000);
+           // @include StandardText(#888,10pt,"Open Sans",center,normal,none);
+        }
+}
+/********************************
+   End of Company Header Block
+ ********************************
+ */
+
+
+/*create animation keyframe*/
+@import "animation.scss";
+/*end of animation keyframe*/
+/********************************
+   Start content Block
+ ********************************
+ */
+div#Content
+{
+    clear: both; float: none; width:100%;
+    //margin: auto auto;
+    display: block; text-align: justify;
+    font-family:"Open Sans";
+   // background: #e3e3e3;
+
+        background: #cccccc;
+    //padding-bottom:300px;
+    padding-bottom:10px;
+     overflow: hidden;
+    .partner
+        {
+                    margin: auto auto;
+                    width:90%;
+                    height:60px;
+                    @include BoxShadow(#888);
+                    text-align: center;
+
+                    &:after,&:before
+                    {
+                        content:"";
+                        border:15px solid black;
+                        position:absolute;
+                        display:block;
+
+                    }
+                    &:before
+                    {
+                       border-width: 30px 40px;
+                       border-color:#0881c4 #0881c4  transparent transparent ;
+                       margin-top:60px;
+                    }
+                   &:after
+                    {
+                        right:5%;
+                        border-width:30px  40px ;
+                        border-color:#0881c4 transparent transparent #0881c4  ;
+
+                    }
+                    span
+                    {
+                        color: #fff;
+                        width:100%;
+                        min-height:60px;
+                        display:block;
+                        //height:140px;
+                        line-height:60px;
+                        @include StandardText(#fff,14pt,"Open Sans Condensed",center,600,capitalize);
+                        //background: #0675b3;
+                        background: #0881c4;
+
+                        //background: linear-gradient(-45deg,#1eb2df 0%, #17a7d2 100%);
+                    }
+        }
+
+      .info
+        {
+            @extend .partner;
+            width:90%;   height:120px;
+            &:after,&:before
+            {
+                content:"";
+                border: none;
+            }
+            span{background:#888; height:120px; line-height:120px; }
+            
+        }
+
+    /***
+    *
+    *clear fixed
+    */
+    .no-float
+    {
+      float: none; clear: both;display: block; content:""
+    }
+   
+    div.box-icon-top
+    {
+        width:85%;
+        margin: auto auto;
+        position: relative;
+        display: block;
+        box-sizng: border-box;
+        background: #fff;
+        padding:20px 0 20px 0;
+        @include BoxShadow(#888,-2px,2px,4px);
+        overflow: hidden;
+        &:after{@extend .no-float;}
+            [class*="float-"]
+            {
+               
+               // opacity:0;
+            }
+            //import columnBox
+            @import "columnBox";
+            //redefine column box with as we wish
+            div.one-column-box
+            {
+                @extend .float-box;
+                opacity:1;
+                width:100%;
+                .news-item
+                {
+                    margin: auto auto;
+                    width:95%;
+                    height:30px;
+                    line-height:30px;
+                    @include StandardText(blue,10pt,"Open Sans",left,200,normal);
+                    text-decoration: underline;
+                    text-overflow: ellipsis;
+                   overflow: hidden;
+                   white-space: nowrap;
+                }
+                .news-headline
+                {
+                   width:98%;
+                   margin: auto auto;
+                   @include StandardText(#000,12pt,"Open Sans Condensed",left,600,uppercase);
+                   height:45px;
+                   line-height:60px;
+                   border-bottom:2px solid #0881c4;
+                }
+                
+            }
+            div.two-column-box
+            {
+                @extend .float-box;
+                opacity:1;
+                width:(100%/2);
+            }
+            //redefine column box with as we wish
+            div.three-column-box
+            {
+                @extend .float-box;
+                opacity:1;
+                width:(100%/3);
+                .news-headline
+                {
+                   width:98%;
+                   margin: auto auto;
+                   @include StandardText(#000,12pt,"Open Sans Condensed",center,600,uppercase);
+                   height:45px;
+                   line-height:60px;
+                   border-top:2px solid #0881c4;
+                   
+                }
+                img
+                {
+                    //width:98%;
+                    margin-top:5px;
+                    max-width:98%;
+                    height:230px;
+                }
+            }
+            
+            div.four-column-box
+            {
+                @extend .float-box;
+                opacity:1;
+                width:(100%/4);
+            }
+            
+            
+            div.float-txt
+             {
+                width:90%;
+                margin: auto auto;
+                text-align: justify;
+                font-size:10pt;
+                font-face:600;
+                span,ul
+                {
+                  @extend div.float-txt;
+                  font-size:8pt;
+                  display:block;
+                  text-align:center;
+                  padding:10px 0;
+                }
+             
+             }
+            .icon
+                {
+                   z-index:10;
+                   width:80px;
+                   height:80px;
+                   line-height:80px;
+                   display: inline-block;
+                   //padding:15px 15px;
+                   @include StandardText(#000,9pt,"Open Sans Condensed",center,600,capitalize);
+                   border-sizing: border-box;
+                   @include BoxShadow(#000,1px,-2px,4px);
+                   border-radius:50% 50%;
+                   vertical-align: middle;
+                   @include transition(all,1s,linear);
+                   background: #0881c4;
+                   color: #fff;
+                   &:hover
+                   {
+                     color: #000; background: lighten(#0881c4,5%);
+                     cursor: pointer;     opacity:1;
+                   }
+                }
+             .horizontal-list
+                {
+                    list-style: none;
+                    width:100%;
+                    height:50px;
+                    background: #0881c4;
+                    li
+                    {
+                        width:(100%/$numberOfBox); float: left;
+                        border-sizing: border-box;
+                        display: block;
+                        height:50px;
+                        line-height:50px;
+                        @include StandardText(#fff,10pt,"Open Sans Condensed",center,600,uppercase);
+                    }
+                }
+               .switch-content
+                {
+                    margin: auto auto;
+                    width:98%;
+                    @include StandardText(#000,10pt,"Open Sans",left,300,normal);
+
+                }
+                //define the table
+                .control-container
+                {
+                    width:100%;
+                    height: auto;
+                    margin: auto auto;
+                    @include BoxShadow(#888,-2px,0,4px);
+                    
+                    @import "tblLayout";
+                    .tbl-four-column
+                    {
+                        width:(100%/3); 
+                        td{border:none; @include StandardText(#000,12pt,"Open Sans Condensed",center,600,normal);}
+                        th{border:none; @include StandardText(#fff,12pt,"Open Sans Condensed",center,600,normal);}
+                    }
+                }
+                table
+                {
+                    width:80%;
+                    margin-left:3%;
+                    @include StandardText(#000,10pt,"Open Sans Condensed",left,600,normal);
+                    th{border:none; @include StandardText(#000,18pt,"Open Sans Condensed",left,600,normal);}
+                    
+                }
+              
+               
+    }
+    div.container
+    {
+            width:100%;
+            height: auto;
+            background: #000;
+            display: block;
+            height:480px;
+            div{@include transition(all,1s,linear);}
+
+    }
+    div.Outer
+    {
+          width:100%; height: auto;
+          min-height:620px;
+          background: #fff;
+          //opacity: 0.75;
+          @include BoxShadow(#888,5px, 5px, 15px,3px);
+          text-align: center;
+    }
+
+
+ }
+
+/********************************
+   End of content Block
+ ********************************
+ */
+
+
+/********************************
+   Start Footer block
+ ********************************
+ */
+
+div#Footer
+{
+
+width:100%;
+height:180px;
+background: #e0dfdc;
+background: #959275;
+background: #c4c4c4;
+@include TextShadow(#888);
+    div.hoz-box
+    {
+        width:100%;
+        height: auto;
+        @include StandardText(#000,10pt,"Open Sans Condensed",center,600,capitalize);
+    }
+    div.hoz-color,div.hoz-empt
+    {
+       background: #086f67;
+        background:#2d2d2d;
+       height:20px;
+       width:100%;
+       display: block;
+    }
+    div.hoz-empt{background:none; height:140px;}
+}
+/********************************
+  End footer block
+ ********************************
+ */
+
+
+/********************************
+  Import screens
+ ********************************
+ */
+@import "iphone.scss";
+@import "iphoneLandscape.scss";
+@import "ipad.scss";
+@import "ipadLandscape.scss";
+
+
+
+/********************************
+  End of Import screen
+ ********************************
+ */

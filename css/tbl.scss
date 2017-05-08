@@ -1,0 +1,51 @@
+/*
+    Document   : tbl
+    Created on : Mar 31, 2015, 3:13:42 AM
+    Author     : MarinThien
+    Description:
+    Purpose of the stylesheet follows.
+*/
+table.two-column
+{
+    margin: auto auto;    
+    width:100%;
+    border-collapse: collapse;
+    td
+    {
+        display: table-cell; 
+        width:100%;
+        text-align: justify; padding:5px;
+        box-sizing: border-box;
+     div.illustration
+        {
+                margin: auto auto; width:92%; height: auto;
+                float: none; clear: both;
+                div.Description
+                {
+                    @include StandardText($defaultTxtColor,10pt,$menuFont,left);
+                    display: inline-block;
+                    position: relative;  box-sizing: border-box; 
+                }
+              div.Name
+                {
+                    @include StandardText($defaultTxtColor,10pt,$menuFont,left);
+                    font-weight:bold;                                    
+                }
+               div.wineDescription
+                {
+                    @include StandardText($defaultTxtColor,10pt,$menuFont,left);
+                    font-weight: normal;
+                    //width:70%;
+                    float:left;
+                }
+              span.Price
+                {
+                    float: right;
+                    width: auto; height:22px; box-sizing: border-box;
+                    @include StandardText($defaultTxtColor,10pt,$menuFont,center);                                    
+                    display: inline-block;
+                    @include BoxShadow(#000,2px 2px);
+                }
+        } 
+    }
+}

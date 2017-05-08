@@ -1,0 +1,25 @@
+button
+{
+    -webkit-font-smoothing: antialiased;
+    border: none;border-radius: 0.1875em;
+    color: white;display: inline-block;
+    font-size: 1.2em;font-weight: bold;
+    line-height: 1;padding: 0.3em 0.35em 0.35em;
+    text-decoration: none;
+    &:hover{ color: #fff; cursor: pointer;}
+}
+.Btn-Menu
+{
+    //display: none;
+    background: none;
+    position: absolute;  
+    //right: 5px; top:40px;
+    z-index:1;
+}
+.center-align
+{
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+}

@@ -1,0 +1,27 @@
+  .tbl-four-column
+  {
+      border-collapse: collapse;
+      margin-bottom:5px;
+      width:(100%/4);
+      float: left;
+      transition: "all .8s linear";
+      &:hover
+      {
+          
+      }
+      th{
+          text-align:center;height:60px;
+          background: #0881c4;color:#fff;@include TextShadow(#888);
+          
+      }
+      td
+      {
+          display: block;
+          width: auto;
+          
+          border:1px solid #ddd;
+          height:30px;
+          line-height:30px;
+          @include StandardText(#000,10pt,"Vollkorn",center,300,normal);
+      }
+  }

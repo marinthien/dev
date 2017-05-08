@@ -1,0 +1,31 @@
+
+
+div#Site-Nav
+{
+   //include the menu style
+    width: 100% ;
+    box-sizing: border-box; 
+    @include menu; // opacity:0.75;
+    @include BoxShadow(#000,0,1px,5px);
+   //(100%/ $numberOfMenuItem) * 6;
+    font-size: 15pt;
+    line-height:50px;
+    //text-align: center;
+    height:50px;  
+    //background:$menuBgColor1;
+    background: linear-gradient(-45deg,#38aaab 0%, #4befed 50%,#37bebc 100%); 
+    //background: linear-gradient(left,rgba(56,170,171,0),rgba(255,0,0,1)); 
+    @include transition(all,.5s,linear);
+    //button{@extend button; color:red; position:absolute; top:0;right:0; display:none;}
+    //text-align: left;
+    div.company-name-combine
+    { 
+        margin-left:5px;@include TextShadow(#888);
+        @include transition(all,.5s,linear); 
+        position:relative;
+        width:10%; 
+        box-sizing: border-box; 
+        text-align: left; font-size:18pt; color:#fff;
+        display:inline-block;
+    }
+}

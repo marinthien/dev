@@ -1,0 +1,1473 @@
+/*
+li:hover>ul{ 
+            display:block;  background: #888; width:180px; 
+            //border:none;
+            //border-left: 2px solid $SubMenuBorderColor;
+            //border-right: 2px solid $SubMenuBorderColor;
+            //border-bottom: 2px solid $SubMenuBorderColor;                                                                          	
+            }        
+ul{display:none; position: absolute; }      
+ul>li{display:block; }
+ul>li:hover,ul>li>a:hover{background: #42BBA3; color:#fff;}
+ul>li>a{background:#f5f5f2; display:block; width:180px; color:#000; font-size:10pt;&:before{position:absolute; top:0;margin:0px 60px;@include Arrow(#000);}}
+ul ul {margin: -30px auto auto 179px; width:200px;  }
+ul li ul li a{color:#333; background: azure;}
+//ul>li:hover>ul{ display:block; position: absolute; background: red; }
+//ul>ul li {display:none;postion:absolute;}
+// ul li:hover>ul{display:block; margin-left:18px; background: green;}
+//ul ul>li:hover>ul{display:block; with:200px; background:green;}
+//ul li a {width:80px;height:20px; background:#333; display:block; color:red; }
+
+*/
+/*** Define the common function to style the object**/
+/**Below may not be used in this work*/
+@import url("//fonts.googleapis.com/css?subset=latin%2Clatin-ext&family=Open%20Sans");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Raleway);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+button, div#Site-Nav button {
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  border-radius: 0.1875em;
+  color: white;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.3em 0.35em 0.35em;
+  text-decoration: none; }
+  button:hover, div#Site-Nav button:hover {
+    color: #fff;
+    cursor: pointer; }
+
+.Btn-Menu {
+  background: none;
+  position: absolute;
+  z-index: 1; }
+
+.center-align {
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); }
+
+/*define global variables*/
+@font-face {
+  font-family: 'bodyFont';
+  src: url("webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("webfont.eot?#iefix") format("embedded-opentype"), url("webfont.woff2") format("woff2"), url("webfont.woff") format("woff"), url("webfont.ttf") format("truetype"), url("webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+*, html {
+  margin: 0;
+  padding: 0;
+  font-size: 12pt; }
+
+div#Content-Outer {
+  height: 100%;
+  width: 100%;
+  margin: auto auto;
+  text-align: center; }
+
+/********************************
+   Start Navigation Block
+ ********************************
+ */
+div#Site-Nav {
+  width: 100%;
+  -moz-box-shadow: 0 1px 5px 0 #000;
+  -webkit-box-shadow: 0 1px 5px 0 #000;
+  /*	*/
+  box-shadow: 0 1px 5px 0 #000;
+  font-size: 15pt;
+  height: 90px;
+  min-height: 90px;
+  line-height: 90px;
+  z-index: 1;
+  background: #fff;
+  border-bottom: 5px solid #0675b3;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear; }
+  div#Site-Nav ul {
+    position: absolute;
+    list-style: none;
+    width: 60%;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    height: 90px; }
+    div#Site-Nav ul li {
+      float: left;
+      position: relative;
+      line-height: 90px;
+      position: relative;
+      /*
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      */
+      opacity: 1;
+      width: 16.66667%;
+      transition: all 0.5s linear;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear; }
+      div#Site-Nav ul li:hover, div#Site-Nav ul li > a:hover, div#Site-Nav ul li a.current, div#Site-Nav ul li div#current-location.current {
+        color: #fff;
+        background: #0675b3;
+        -moz-box-shadow: 0 -1px 1px 0 #888;
+        -webkit-box-shadow: 0 -1px 1px 0 #888;
+        /*	*/
+        box-shadow: 0 -1px 1px 0 #888; }
+      div#Site-Nav ul li > a {
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 10pt;
+        font-family: "Open Sans";
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+        text-shadow: 0 1px 1px #888;
+        display: block;
+        cursor: pointer;
+        vertical-align: middle;
+        width: 100%;
+        box-sizing: border-box; }
+    div#Site-Nav ul li:first-child a {
+      border-left: none; }
+  div#Site-Nav button {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none; }
+  div#Site-Nav div.company-name-combine {
+    text-shadow: 0 1px 1px #888;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    position: absolute;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 18pt;
+    color: #fff;
+    width: 253px;
+    height: 90px;
+    font-family: "Tahoma, Geneva, sans-serif"; }
+    div#Site-Nav div.company-name-combine img {
+      width: 253px;
+      height: 90px; }
+
+/********************************
+   End of Navigation Block
+ ********************************
+ */
+/********************************
+  Start Company Header Block
+ ********************************
+ */
+div.banner {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 83%;
+  margin-left: 8.8%;
+  height: 40px;
+  background: #1eb2df;
+  border-sizing: "border-box";
+  color: #fff;
+  line-height: 40px;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  display: inline-block; }
+  div.banner:before, div.banner:after {
+    content: "";
+    bottom: -15px;
+    position: absolute;
+    display: block;
+    border: 20px solid #1eb2df;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+    z-index: -2; }
+  div.banner:before {
+    left: -25px;
+    border-left-color: transparent; }
+  div.banner:after {
+    right: -20px;
+    border-right-color: transparent; }
+  div.banner .ribbon {
+    animation: moveX .2s ease;
+    -webkit-animation: moveX 2s ease; }
+    div.banner .ribbon:before, div.banner .ribbon:after {
+      content: "";
+      bottom: -15px;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #0675b3 transparent transparent transparent;
+      z-index: -1; }
+    div.banner .ribbon:before {
+      left: -3px;
+      border-width: 20px 0 0 19px; }
+    div.banner .ribbon:after {
+      right: 0;
+      border-width: 20px 19px 0 0; }
+
+div.hoz-content {
+  width: 100%;
+  height: 280px;
+  background: #fff; }
+
+div#Company-Space {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  margin: auto auto;
+  display: block;
+  text-shadow: 0 1px 1px #888;
+  -moz-box-shadow: 1px 1px 5px 0 #888;
+  -webkit-box-shadow: 1px 1px 5px 0 #888;
+  /*	*/
+  box-shadow: 1px 1px 5px 0 #888;
+  background: #fff;
+  /******style company*/ }
+  div#Company-Space img {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    margin: 0;
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    perspective: 1700px; }
+  div#Company-Space div.mainSwitch {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    top: 0;
+    margin: 0;
+    perspective: 1700px;
+    z-index: 3; }
+  div#Company-Space .custom {
+    position: absolute;
+    z-index: 5;
+    width: 90%;
+    height: 80px;
+    opacity: 0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10pt;
+    font-family: "Vollkorn";
+    text-transform: uppercase;
+    text-align: left;
+    color: #fff;
+    top: 40%;
+    left: 10%;
+    animation: moveX .2s ease;
+    -webkit-animation: moveX 2s ease;
+    box-sizing: border-box; }
+    div#Company-Space .custom div.story {
+      width: 100%;
+      height: auto;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 10pt;
+      font-family: "Open Sans";
+      text-transform: none;
+      text-align: left;
+      color: #fff;
+      font-style: italic;
+      text-indent: 10px; }
+    div#Company-Space .custom span.slogan, div#Company-Space .custom span.slogan.green, div#Company-Space .custom .black {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 10pt;
+      font-family: "Open Sans Condensed";
+      text-transform: none;
+      text-align: center;
+      color: #fff;
+      margin: auto auto;
+      width: 400px;
+      line-height: 30px;
+      display: block;
+      text-shadow: 0 1px 1px #888; }
+    div#Company-Space .custom span.slogan.green {
+      color: #3d483d; }
+    div#Company-Space .custom span.slogan.black {
+      color: #fff; }
+    div#Company-Space .custom a {
+      perspective: 1700px;
+      margin: auto auto;
+      width: 120px;
+      height: 40px;
+      display: block;
+      border: 4px solid #ddd;
+      animation: dis-app 2s ease;
+      -webkit-transform: dis-app 2s ease;
+      background: #888;
+      line-height: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 10pt;
+      font-family: "Open Sans Condensed";
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+      -moz-box-shadow: 0 1px 1px 0 #000;
+      -webkit-box-shadow: 0 1px 1px 0 #000;
+      /*	*/
+      box-shadow: 0 1px 1px 0 #000; }
+
+div.service, div.service span {
+  height: 100px;
+  line-height: 50px;
+  width: 100%;
+  position: relative;
+  opacity: 0;
+  background: linear-gradient(-125deg, #ddd 0%, #eae9e9 100%);
+  display: block;
+  text-shadow: -2px 1px 1px #888;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15pt;
+  font-family: "Open Sans Condensed";
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear; }
+  div.service span {
+    display: block;
+    line-height: 30px;
+    height: 15px;
+    width: 100%;
+    opacity: 1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10pt;
+    font-family: "Open Sans Condensed";
+    text-transform: uppercase;
+    text-align: center;
+    color: #000; }
+
+/********************************
+   End of Company Header Block
+ ********************************
+ */
+/*create animation keyframe*/
+@keyframes BouncingX {
+  0% {
+    transform: matrix3d(0.1, 0, 0, 0, 0, 0.1, 0, 0, 0, 0, 1, 0, 0, 0, -1600, 0); }
+  25% {
+    transform: matrix3d(0.8, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10, 30, 0, 1);
+    opacity: 1; }
+  75% {
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);
+    opacity: 1; }
+  85% {
+    transform: matrix3d(0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 60, 0, 0, 1);
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+@keyframes doorOpenIn {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  25% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 90, 0, 1);
+    opacity: 1; }
+  75% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10, 0, 0, 1);
+    opacity: 1; }
+  90% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4, 0, 1);
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+@keyframes danceIn {
+  0%,23% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1520, -200, -1660, 1); }
+  25%,78% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -120, -100, -660, 1); }
+  75% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10, -20, -660, 1); }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+@keyframes verticalBarOut {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1; }
+  to {
+    transform: translateY(-100%) scale(0.1);
+    opacity: 0; } }
+@-webkit-keyframes verticalBarOut {
+  from {
+    -webkit-transform: translateY(0) scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: translateY(-100%) scale(0.1);
+    opacity: 0; } }
+@keyframes verticalBarIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+@-webkit-keyframes verticalBarIn {
+  from {
+    -webkit-transform: translateY(100%);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1; } }
+@keyframes verticalBarRotate {
+  from {
+    transform: rotateY(80deg);
+    opacity: 0; }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1; } }
+@-webkit-keyframes verticalBarRotate {
+  from {
+    -webkit-transform: rotateY(80deg);
+    opacity: 0; }
+  to {
+    -webkit-transform: rotateY(0deg);
+    opacity: 1; } }
+@keyframes horizontalBarOut {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1; }
+  to {
+    transform: translateX(-100%) scale(0.1);
+    opacity: 0; } }
+@-webkit-keyframes horizontalBarOut {
+  from {
+    -webkit-transform: translateX(0) scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: translateX(-100%) scale(0.1);
+    opacity: 0; } }
+@keyframes rot {
+  from {
+    transform: rotateX(0deg);
+    opacity: 1; }
+  to {
+    transform: rotateX(80deg);
+    opacity: 0; } }
+@keyframes rotFromBack {
+  from {
+    transform: rotateX(80deg);
+    opacity: 0; }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1; } }
+@keyframes spinX {
+  from {
+    transform: translateX(0);
+    opacity: 1; }
+  to {
+    transform: translateX(100%);
+    opacity: 0; } }
+@keyframes spinOutFromX {
+  from {
+    transform: translateX(-100%);
+    opacity: 0; }
+  to {
+    transform: translateX(0);
+    opacity: 1; } }
+@keyframes spinOutFromY {
+  from {
+    transform: translateY(-100%) scale(0.1);
+    opacity: 0; }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1; } }
+@keyframes spinY {
+  from {
+    transform: translateY(0);
+    opacity: 1; }
+  to {
+    transform: translateY(-100%);
+    opacity: 0; } }
+@keyframes spinYBar {
+  from {
+    transform: translateY(100%) scale(0.1);
+    opacity: 0; }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1; } }
+@keyframes tranY {
+  from {
+    transform: scale(1);
+    border-radius: 0;
+    opacity: 1; }
+  to {
+    transform: scale(0);
+    border-radius: 140px;
+    opacity: 0; } }
+@keyframes moveRightFromX {
+  from {
+    transform: translateX(100%) scale(0.5); }
+  to {
+    transform: translateX(0) scale(1); } }
+@-webkit-keyframes moveRightFromX {
+  from {
+    -webkit-transform: translateX(100%) scale(0.5); }
+  to {
+    -webkit-transform: translateX(0) scale(1); } }
+@keyframes moveLeftFromX {
+  from {
+    transform: translateX(-100%) scale(0.5); }
+  to {
+    transform: translateX(0) scale(1); } }
+@-webkit-keyframes moveLeftFromX {
+  from {
+    -webkit-transform: translateX(-100%) scale(0.5); }
+  to {
+    -webkit-transform: translateX(0) scale(1); } }
+@keyframes moveY {
+  from {
+    transform: translateY(150px) scale(0.5); }
+  to {
+    transform: translateY(0) scale(1); } }
+@-webkit-keyframes moveY {
+  from {
+    -webkit-transform: translateY(150px) scale(0.5); }
+  to {
+    -webkit-transform: translateY(0) scale(1); } }
+@keyframes door {
+  from {
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    transform: scale(0);
+    opacity: 0; } }
+@keyframes circle-color {
+  from {
+    background: #000;
+    color: #fff; }
+  to {
+    background: #888;
+    color: #000; } }
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@keyframes dis-app {
+  from {
+    opacity: 0.25;
+    transform: scale(0.1); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@-moz-keyframes dis-app {
+  from {
+    opacity: 0.25;
+    transform: scale(0.1); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@-webkit-keyframes dis-app {
+  from {
+    opacity: 0.25;
+    -webkit-transform: scale(0.1); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1); } }
+@keyframes app {
+  from {
+    opacity: 0.1;
+    transform: scale(1); }
+  to {
+    opacity: 1;
+    transform: scale(0); } }
+@-webkit-keyframes app {
+  from {
+    -webkit-opacity: 0.75;
+    -webkit-transform: scale(1); }
+  to {
+    -webkit-opacity: 1;
+    -webkit-transform: scale(0); } }
+@keyframes infinite-spinning {
+  from {
+    transform: rotateY(0deg); }
+  to {
+    transform: rotateY(720deg); } }
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotateY(0deg); }
+  to {
+    -webkit-transform: rotateY(720deg); } }
+/*end of animation keyframe*/
+/********************************
+   Start content Block
+ ********************************
+ */
+div#Content {
+  clear: both;
+  float: none;
+  width: 100%;
+  display: block;
+  text-align: justify;
+  font-family: "Open Sans";
+  background: #cccccc;
+  padding-bottom: 10px;
+  overflow: hidden;
+  /***
+  *
+  *clear fixed
+  */ }
+  div#Content .partner, div#Content .info {
+    margin: auto auto;
+    width: 90%;
+    height: 60px;
+    -moz-box-shadow: 0 1px 1px 0 #888;
+    -webkit-box-shadow: 0 1px 1px 0 #888;
+    /*	*/
+    box-shadow: 0 1px 1px 0 #888;
+    text-align: center; }
+    div#Content .partner:after, div#Content .info:after, div#Content .partner:before, div#Content .info:before {
+      content: "";
+      border: 15px solid black;
+      position: absolute;
+      display: block; }
+    div#Content .partner:before, div#Content .info:before {
+      border-width: 30px 40px;
+      border-color: #0881c4 #0881c4 transparent transparent;
+      margin-top: 60px; }
+    div#Content .partner:after, div#Content .info:after {
+      right: 5%;
+      border-width: 30px 40px;
+      border-color: #0881c4 transparent transparent #0881c4; }
+    div#Content .partner span, div#Content .info span {
+      color: #fff;
+      width: 100%;
+      min-height: 60px;
+      display: block;
+      line-height: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14pt;
+      font-family: "Open Sans Condensed";
+      text-transform: capitalize;
+      text-align: center;
+      color: #fff;
+      background: #0881c4; }
+  div#Content .info {
+    width: 90%;
+    height: 120px; }
+    div#Content .info:after, div#Content .info:before {
+      content: "";
+      border: none; }
+    div#Content .info span {
+      background: #888;
+      height: 120px;
+      line-height: 120px; }
+  div#Content .no-float, div#Content div#Company-Space:after, div#Content div.box-icon-top:after {
+    float: none;
+    clear: both;
+    display: block;
+    content: ""; }
+  div#Content div.box-icon-top {
+    width: 85%;
+    margin: auto auto;
+    position: relative;
+    display: block;
+    box-sizng: border-box;
+    background: #fff;
+    padding: 20px 0 20px 0;
+    -moz-box-shadow: -2px 2px 4px 0 #888;
+    -webkit-box-shadow: -2px 2px 4px 0 #888;
+    /*	*/
+    box-shadow: -2px 2px 4px 0 #888;
+    overflow: hidden; }
+    div#Content div.box-icon-top div.float-box, div#Content div.box-icon-top div.one-column-box, div#Content div.box-icon-top div.two-column-box, div#Content div.box-icon-top div.three-column-box, div#Content div.box-icon-top div.four-column-box {
+      float: left;
+      width: 33.33333%;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.1s linear;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear; }
+      div#Content div.box-icon-top div.float-box img, div#Content div.box-icon-top div.one-column-box img, div#Content div.box-icon-top div.two-column-box img, div#Content div.box-icon-top div.three-column-box img, div#Content div.box-icon-top div.four-column-box img {
+        max-width: 33.33333%;
+        height: auto; }
+    div#Content div.box-icon-top div.one-column-box {
+      opacity: 1;
+      width: 100%; }
+      div#Content div.box-icon-top div.one-column-box .news-item {
+        margin: auto auto;
+        width: 95%;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        font-weight: 200;
+        font-size: 10pt;
+        font-family: "Open Sans";
+        text-transform: normal;
+        text-align: left;
+        color: blue;
+        text-decoration: underline;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap; }
+      div#Content div.box-icon-top div.one-column-box .news-headline {
+        width: 98%;
+        margin: auto auto;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 12pt;
+        font-family: "Open Sans Condensed";
+        text-transform: uppercase;
+        text-align: left;
+        color: #000;
+        height: 45px;
+        line-height: 60px;
+        border-bottom: 2px solid #0881c4; }
+    div#Content div.box-icon-top div.two-column-box {
+      opacity: 1;
+      width: 50%; }
+    div#Content div.box-icon-top div.three-column-box {
+      opacity: 1;
+      width: 33.33333%; }
+      div#Content div.box-icon-top div.three-column-box .news-headline {
+        width: 98%;
+        margin: auto auto;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 12pt;
+        font-family: "Open Sans Condensed";
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+        height: 45px;
+        line-height: 60px;
+        border-top: 2px solid #0881c4; }
+      div#Content div.box-icon-top div.three-column-box img {
+        margin-top: 5px;
+        max-width: 98%;
+        height: 230px; }
+    div#Content div.box-icon-top div.four-column-box {
+      opacity: 1;
+      width: 25%; }
+    div#Content div.box-icon-top div.float-txt, div#Content div.box-icon-top div.float-txt span, div#Content div.box-icon-top div.float-txt ul {
+      width: 90%;
+      margin: auto auto;
+      text-align: justify;
+      font-size: 10pt;
+      font-face: 600; }
+      div#Content div.box-icon-top div.float-txt span, div#Content div.box-icon-top div.float-txt ul {
+        font-size: 8pt;
+        display: block;
+        text-align: center;
+        padding: 10px 0; }
+    div#Content div.box-icon-top .icon {
+      z-index: 10;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 9pt;
+      font-family: "Open Sans Condensed";
+      text-transform: capitalize;
+      text-align: center;
+      color: #000;
+      border-sizing: border-box;
+      -moz-box-shadow: 1px -2px 4px 0 #000;
+      -webkit-box-shadow: 1px -2px 4px 0 #000;
+      /*	*/
+      box-shadow: 1px -2px 4px 0 #000;
+      border-radius: 50% 50%;
+      vertical-align: middle;
+      transition: all 1s linear;
+      -webkit-transition: all 1s linear;
+      -moz-transition: all 1s linear;
+      background: #0881c4;
+      color: #fff; }
+      div#Content div.box-icon-top .icon:hover {
+        color: #000;
+        background: #0991dc;
+        cursor: pointer;
+        opacity: 1; }
+    div#Content div.box-icon-top .horizontal-list {
+      list-style: none;
+      width: 100%;
+      height: 50px;
+      background: #0881c4; }
+      div#Content div.box-icon-top .horizontal-list li {
+        width: 33.33333%;
+        float: left;
+        border-sizing: border-box;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 10pt;
+        font-family: "Open Sans Condensed";
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff; }
+    div#Content div.box-icon-top .switch-content {
+      margin: auto auto;
+      width: 98%;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 10pt;
+      font-family: "Open Sans";
+      text-transform: normal;
+      text-align: left;
+      color: #000; }
+    div#Content div.box-icon-top .control-container {
+      width: 100%;
+      height: auto;
+      margin: auto auto;
+      -moz-box-shadow: -2px 0 4px 0 #888;
+      -webkit-box-shadow: -2px 0 4px 0 #888;
+      /*	*/
+      box-shadow: -2px 0 4px 0 #888; }
+      div#Content div.box-icon-top .control-container .tbl-four-column {
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        width: 25%;
+        float: left;
+        transition: "all .8s linear"; }
+        div#Content div.box-icon-top .control-container .tbl-four-column th {
+          text-align: center;
+          height: 60px;
+          background: #0881c4;
+          color: #fff;
+          text-shadow: 0 1px 1px #888; }
+        div#Content div.box-icon-top .control-container .tbl-four-column td {
+          display: block;
+          width: auto;
+          border: 1px solid #ddd;
+          height: 30px;
+          line-height: 30px;
+          text-decoration: none;
+          font-weight: 300;
+          font-size: 10pt;
+          font-family: "Vollkorn";
+          text-transform: normal;
+          text-align: center;
+          color: #000; }
+      div#Content div.box-icon-top .control-container .tbl-four-column {
+        width: 33.33333%; }
+        div#Content div.box-icon-top .control-container .tbl-four-column td {
+          border: none;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 12pt;
+          font-family: "Open Sans Condensed";
+          text-transform: normal;
+          text-align: center;
+          color: #000; }
+        div#Content div.box-icon-top .control-container .tbl-four-column th {
+          border: none;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 12pt;
+          font-family: "Open Sans Condensed";
+          text-transform: normal;
+          text-align: center;
+          color: #fff; }
+    div#Content div.box-icon-top table {
+      width: 80%;
+      margin-left: 3%;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 10pt;
+      font-family: "Open Sans Condensed";
+      text-transform: normal;
+      text-align: left;
+      color: #000; }
+      div#Content div.box-icon-top table th {
+        border: none;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18pt;
+        font-family: "Open Sans Condensed";
+        text-transform: normal;
+        text-align: left;
+        color: #000; }
+  div#Content div.container {
+    width: 100%;
+    height: auto;
+    background: #000;
+    display: block;
+    height: 480px; }
+    div#Content div.container div {
+      transition: all 1s linear;
+      -webkit-transition: all 1s linear;
+      -moz-transition: all 1s linear; }
+  div#Content div.Outer {
+    width: 100%;
+    height: auto;
+    min-height: 620px;
+    background: #fff;
+    -moz-box-shadow: 5px 5px 15px 3px #888;
+    -webkit-box-shadow: 5px 5px 15px 3px #888;
+    /*	*/
+    box-shadow: 5px 5px 15px 3px #888;
+    text-align: center; }
+
+/********************************
+   End of content Block
+ ********************************
+ */
+/********************************
+   Start Footer block
+ ********************************
+ */
+div#Footer {
+  width: 100%;
+  height: 180px;
+  background: #e0dfdc;
+  background: #959275;
+  background: #c4c4c4;
+  text-shadow: 0 1px 1px #888; }
+  div#Footer div.hoz-box {
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 10pt;
+    font-family: "Open Sans Condensed";
+    text-transform: capitalize;
+    text-align: center;
+    color: #000; }
+  div#Footer div.hoz-color, div#Footer div.hoz-empt {
+    background: #086f67;
+    background: #2d2d2d;
+    height: 20px;
+    width: 100%;
+    display: block; }
+  div#Footer div.hoz-empt {
+    background: none;
+    height: 140px; }
+
+/********************************
+  End footer block
+ ********************************
+ */
+/********************************
+  Import screens
+ ********************************
+ */
+/*
+    Document   : iphone
+    Created on : Dec 28, 2014, 12:53:57 PM
+    Author     : MarinThien
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+iphone portrait
+*/
+@media screen and (max-width: 320px) {
+  max-width: 320px;
+  div#Content-Outer {
+    max-width: 320px; }
+    div#Content-Outer div#Company-Space {
+      width: 320px !important;
+      width: 100% !important;
+      height: 250px !important; }
+      div#Content-Outer div#Company-Space div#logo {
+        top: 40px;
+        width: 180px;
+        height: 120px; }
+        div#Content-Outer div#Company-Space div#logo img {
+          width: 150px;
+          height: 100px; }
+      div#Content-Outer div#Company-Space div#Company-Header {
+        position: absolute;
+        top: 120px;
+        left: 60px;
+        width: 200px; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line1 {
+          font-size: 20pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line2 {
+          font-size: 10pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line3 {
+          font-size: 8pt; }
+    div#Content-Outer div#Site-Nav {
+      width: 100%;
+      height: 40px !important; }
+      div#Content-Outer div#Site-Nav div.company-name-combine {
+        font-size: 15pt;
+        width: 90px;
+        display: block;
+        text-align: left;
+        transform: translate(-20%) scale(0.6);
+        -webkit-transform: translate(-20%) scale(0.6); }
+      div#Content-Outer div#Site-Nav ul#shop-nav {
+        display: none;
+        top: 90px;
+        height: auto;
+        position: absolute;
+        width: 98%;
+        z-index: 400;
+        -moz-box-shadow: 0 -5px 10px 0 #000;
+        -webkit-box-shadow: 0 -5px 10px 0 #000;
+        /*	*/
+        box-shadow: 0 -5px 10px 0 #000;
+        background: #fff; }
+        div#Content-Outer div#Site-Nav ul#shop-nav li {
+          text-align: center;
+          line-height: 50px;
+          width: 100%;
+          float: none;
+          clear: both; }
+          div#Content-Outer div#Site-Nav ul#shop-nav li a {
+            padding-left: 25px;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 200;
+            font-size: 8pt;
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            text-align: left;
+            color: #000; }
+      div#Content-Outer div#Site-Nav .Btn-Menu {
+        z-index: 1;
+        color: #000;
+        right: 10px;
+        top: 25px;
+        display: block;
+        transform: scale(1.2) rotate(90deg);
+        -moz-transform: scale(1.2) rotate(90deg);
+        -webkit-transform: scale(1.2) rotate(90deg);
+        transition: "all .1s linear";
+        -moz-transition: "all .1s linear";
+        -webkit-transition: "all .1s linear";
+        height: 40px; }
+        div#Content-Outer div#Site-Nav .Btn-Menu:hover {
+          cursor: pointer; }
+    div#Content-Outer div#Content {
+      width: 100%;
+      /*******end of gallery style **********/ }
+      div#Content-Outer div#Content div.box-icon-top div.float-box, div#Content-Outer div#Content div.box-icon-top div.one-column-box, div#Content-Outer div#Content div.box-icon-top div.two-column-box, div#Content-Outer div#Content div.box-icon-top div.three-column-box, div#Content-Outer div#Content div.box-icon-top div.four-column-box, div#Content-Outer div#Content div.box-icon-top .two-column-box, div#Content-Outer div#Content div.box-icon-top .three-column-box, div#Content-Outer div#Content div.box-icon-top .tbl-four-column {
+        width: 100%; }
+      div#Content-Outer div#Content div.Gallery {
+        height: 200px; }
+        div#Content-Outer div#Content div.Gallery img {
+          height: 200px; }
+      div#Content-Outer div#Content div.innerGallery {
+        height: auto;
+        width: 100%;
+        overflow: hidden; }
+        div#Content-Outer div#Content div.innerGallery img {
+          height: 80px;
+          width: 90px; }
+      div#Content-Outer div#Content div.Outer {
+        margin: 0;
+        padding: 0; }
+        div#Content-Outer div#Content div.Outer div.region {
+          width: 100%; }
+          div#Content-Outer div#Content div.Outer div.region table.two-column {
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            text-align: left; }
+            div#Content-Outer div#Content div.Outer div.region table.two-column td {
+              display: block;
+              text-align: none;
+              width: 100%; }
+              div#Content-Outer div#Content div.Outer div.region table.two-column td div.illustration div.Description {
+                font-size: 10pt;
+                padding-top: 5px; } }
+/*
+    Document   : iphone
+    Created on : Dec 28, 2014, 12:53:57 PM
+    Author     : MarinThien
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+iphone portrait
+*/
+@media screen and (max-width: 480px) {
+  max-width: 480px;
+  div#Content-Outer {
+    max-width: 480px; }
+    div#Content-Outer div#Company-Space {
+      width: 480px !important;
+      width: 100% !important;
+      height: 250px !important; }
+      div#Content-Outer div#Company-Space div#logo {
+        top: 40px;
+        width: 180px;
+        height: 120px; }
+        div#Content-Outer div#Company-Space div#logo img {
+          width: 150px;
+          height: 100px; }
+      div#Content-Outer div#Company-Space div#Company-Header {
+        position: absolute;
+        top: 120px;
+        left: 60px;
+        width: 200px; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line1 {
+          font-size: 20pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line2 {
+          font-size: 10pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line3 {
+          font-size: 8pt; }
+    div#Content-Outer div#Site-Nav {
+      width: 100%;
+      height: 40px !important; }
+      div#Content-Outer div#Site-Nav div.company-name-combine {
+        font-size: 15pt;
+        width: 90px;
+        display: block;
+        text-align: left;
+        transform: translate(-20%) scale(0.6);
+        -webkit-transform: translate(-20%) scale(0.6); }
+      div#Content-Outer div#Site-Nav ul#shop-nav {
+        display: none;
+        top: 90px;
+        height: auto;
+        position: absolute;
+        width: 98%;
+        z-index: 400;
+        -moz-box-shadow: 0 -5px 10px 0 #000;
+        -webkit-box-shadow: 0 -5px 10px 0 #000;
+        /*	*/
+        box-shadow: 0 -5px 10px 0 #000;
+        background: #fff; }
+        div#Content-Outer div#Site-Nav ul#shop-nav li {
+          text-align: center;
+          line-height: 50px;
+          width: 100%;
+          float: none;
+          clear: both; }
+          div#Content-Outer div#Site-Nav ul#shop-nav li a {
+            padding-left: 25px;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 200;
+            font-size: 8pt;
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            text-align: left;
+            color: #000; }
+      div#Content-Outer div#Site-Nav .Btn-Menu {
+        z-index: 1;
+        color: #000;
+        right: 10px;
+        top: 25px;
+        display: block;
+        transform: scale(1.2) rotate(90deg);
+        -moz-transform: scale(1.2) rotate(90deg);
+        -webkit-transform: scale(1.2) rotate(90deg);
+        transition: "all .1s linear";
+        -moz-transition: "all .1s linear";
+        -webkit-transition: "all .1s linear";
+        height: 40px; }
+        div#Content-Outer div#Site-Nav .Btn-Menu:hover {
+          cursor: pointer; }
+    div#Content-Outer div#Content {
+      width: 100%;
+      /*******end of gallery style **********/ }
+      div#Content-Outer div#Content div.box-icon-top div.float-box, div#Content-Outer div#Content div.box-icon-top div.one-column-box, div#Content-Outer div#Content div.box-icon-top div.two-column-box, div#Content-Outer div#Content div.box-icon-top div.three-column-box, div#Content-Outer div#Content div.box-icon-top div.four-column-box, div#Content-Outer div#Content div.box-icon-top .two-column-box, div#Content-Outer div#Content div.box-icon-top .three-column-box, div#Content-Outer div#Content div.box-icon-top .tbl-four-column {
+        width: 100%; }
+      div#Content-Outer div#Content div.Gallery {
+        height: 200px; }
+        div#Content-Outer div#Content div.Gallery img {
+          height: 200px; }
+      div#Content-Outer div#Content div.innerGallery {
+        height: auto;
+        width: 100%;
+        overflow: hidden; }
+        div#Content-Outer div#Content div.innerGallery img {
+          height: 80px;
+          width: 90px; }
+      div#Content-Outer div#Content div.Outer {
+        margin: 0;
+        padding: 0; }
+        div#Content-Outer div#Content div.Outer div.region {
+          width: 100%; }
+          div#Content-Outer div#Content div.Outer div.region table.two-column {
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            text-align: left; }
+            div#Content-Outer div#Content div.Outer div.region table.two-column td {
+              display: block;
+              text-align: none;
+              width: 100%; }
+              div#Content-Outer div#Content div.Outer div.region table.two-column td div.illustration div.Description {
+                font-size: 10pt;
+                padding-top: 5px; } }
+/*
+    Document   : iphone
+    Created on : Dec 28, 2014, 12:53:57 PM
+    Author     : MarinThien
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+iphone portrait
+*/
+@media screen and (max-width: 768px) {
+  max-width: 768px;
+  div#Content-Outer {
+    max-width: 768px; }
+    div#Content-Outer div#Company-Space {
+      width: 768px !important;
+      width: 100% !important;
+      height: 250px !important; }
+      div#Content-Outer div#Company-Space div#logo {
+        top: 40px;
+        width: 180px;
+        height: 120px; }
+        div#Content-Outer div#Company-Space div#logo img {
+          width: 150px;
+          height: 100px; }
+      div#Content-Outer div#Company-Space div#Company-Header {
+        position: absolute;
+        top: 120px;
+        left: 60px;
+        width: 200px; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line1 {
+          font-size: 20pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line2 {
+          font-size: 10pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line3 {
+          font-size: 8pt; }
+    div#Content-Outer div#Site-Nav {
+      width: 100%;
+      height: 40px !important; }
+      div#Content-Outer div#Site-Nav div.company-name-combine {
+        font-size: 15pt;
+        width: 90px;
+        display: block;
+        text-align: left;
+        transform: translate(-20%) scale(0.6);
+        -webkit-transform: translate(-20%) scale(0.6); }
+      div#Content-Outer div#Site-Nav ul#shop-nav {
+        display: none;
+        top: 90px;
+        height: auto;
+        position: absolute;
+        width: 98%;
+        z-index: 400;
+        -moz-box-shadow: 0 -5px 10px 0 #000;
+        -webkit-box-shadow: 0 -5px 10px 0 #000;
+        /*	*/
+        box-shadow: 0 -5px 10px 0 #000;
+        background: #fff; }
+        div#Content-Outer div#Site-Nav ul#shop-nav li {
+          text-align: center;
+          line-height: 50px;
+          width: 100%;
+          float: none;
+          clear: both; }
+          div#Content-Outer div#Site-Nav ul#shop-nav li a {
+            padding-left: 25px;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 200;
+            font-size: 8pt;
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            text-align: left;
+            color: #000; }
+      div#Content-Outer div#Site-Nav .Btn-Menu {
+        z-index: 1;
+        color: #000;
+        right: 10px;
+        top: 25px;
+        display: block;
+        transform: scale(1.2) rotate(90deg);
+        -moz-transform: scale(1.2) rotate(90deg);
+        -webkit-transform: scale(1.2) rotate(90deg);
+        transition: "all .1s linear";
+        -moz-transition: "all .1s linear";
+        -webkit-transition: "all .1s linear";
+        height: 40px; }
+        div#Content-Outer div#Site-Nav .Btn-Menu:hover {
+          cursor: pointer; }
+    div#Content-Outer div#Content {
+      width: 100%;
+      /*******end of gallery style **********/ }
+      div#Content-Outer div#Content div.box-icon-top div.float-box, div#Content-Outer div#Content div.box-icon-top div.one-column-box, div#Content-Outer div#Content div.box-icon-top div.two-column-box, div#Content-Outer div#Content div.box-icon-top div.three-column-box, div#Content-Outer div#Content div.box-icon-top div.four-column-box, div#Content-Outer div#Content div.box-icon-top .two-column-box, div#Content-Outer div#Content div.box-icon-top .three-column-box, div#Content-Outer div#Content div.box-icon-top .tbl-four-column {
+        width: 100%; }
+      div#Content-Outer div#Content div.Gallery {
+        height: 200px; }
+        div#Content-Outer div#Content div.Gallery img {
+          height: 200px; }
+      div#Content-Outer div#Content div.innerGallery {
+        height: auto;
+        width: 100%;
+        overflow: hidden; }
+        div#Content-Outer div#Content div.innerGallery img {
+          height: 80px;
+          width: 90px; }
+      div#Content-Outer div#Content div.Outer {
+        margin: 0;
+        padding: 0; }
+        div#Content-Outer div#Content div.Outer div.region {
+          width: 100%; }
+          div#Content-Outer div#Content div.Outer div.region table.two-column {
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            text-align: left; }
+            div#Content-Outer div#Content div.Outer div.region table.two-column td {
+              display: block;
+              text-align: none;
+              width: 100%; }
+              div#Content-Outer div#Content div.Outer div.region table.two-column td div.illustration div.Description {
+                font-size: 10pt;
+                padding-top: 5px; } }
+/*
+    Document   : iphone
+    Created on : Dec 28, 2014, 12:53:57 PM
+    Author     : MarinThien
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+iphone portrait
+*/
+@media screen and (max-width: 1024px) {
+  max-width: 1024px;
+  div#Content-Outer {
+    max-width: 1024px; }
+    div#Content-Outer div#Company-Space {
+      width: 1024px !important;
+      width: 100% !important;
+      height: 250px !important; }
+      div#Content-Outer div#Company-Space div#logo {
+        top: 40px;
+        width: 180px;
+        height: 120px; }
+        div#Content-Outer div#Company-Space div#logo img {
+          width: 150px;
+          height: 100px; }
+      div#Content-Outer div#Company-Space div#Company-Header {
+        position: absolute;
+        top: 120px;
+        left: 60px;
+        width: 200px; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line1 {
+          font-size: 20pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line2 {
+          font-size: 10pt; }
+        div#Content-Outer div#Company-Space div#Company-Header span#Company-Name-Line3 {
+          font-size: 8pt; }
+    div#Content-Outer div#Site-Nav {
+      width: 100%;
+      height: 40px !important; }
+      div#Content-Outer div#Site-Nav div.company-name-combine {
+        font-size: 15pt;
+        width: 90px;
+        display: block;
+        text-align: left;
+        transform: translate(-20%) scale(0.6);
+        -webkit-transform: translate(-20%) scale(0.6); }
+      div#Content-Outer div#Site-Nav ul#shop-nav {
+        display: none;
+        top: 90px;
+        height: auto;
+        position: absolute;
+        width: 98%;
+        z-index: 400;
+        -moz-box-shadow: 0 -5px 10px 0 #000;
+        -webkit-box-shadow: 0 -5px 10px 0 #000;
+        /*	*/
+        box-shadow: 0 -5px 10px 0 #000;
+        background: #fff; }
+        div#Content-Outer div#Site-Nav ul#shop-nav li {
+          text-align: center;
+          line-height: 50px;
+          width: 100%;
+          float: none;
+          clear: both; }
+          div#Content-Outer div#Site-Nav ul#shop-nav li a {
+            padding-left: 25px;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 200;
+            font-size: 8pt;
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            text-align: left;
+            color: #000; }
+      div#Content-Outer div#Site-Nav .Btn-Menu {
+        z-index: 1;
+        color: #000;
+        right: 10px;
+        top: 25px;
+        display: block;
+        transform: scale(1.2) rotate(90deg);
+        -moz-transform: scale(1.2) rotate(90deg);
+        -webkit-transform: scale(1.2) rotate(90deg);
+        transition: "all .1s linear";
+        -moz-transition: "all .1s linear";
+        -webkit-transition: "all .1s linear";
+        height: 40px; }
+        div#Content-Outer div#Site-Nav .Btn-Menu:hover {
+          cursor: pointer; }
+    div#Content-Outer div#Content {
+      width: 100%;
+      /*******end of gallery style **********/ }
+      div#Content-Outer div#Content div.box-icon-top div.float-box, div#Content-Outer div#Content div.box-icon-top div.one-column-box, div#Content-Outer div#Content div.box-icon-top div.two-column-box, div#Content-Outer div#Content div.box-icon-top div.three-column-box, div#Content-Outer div#Content div.box-icon-top div.four-column-box, div#Content-Outer div#Content div.box-icon-top .two-column-box, div#Content-Outer div#Content div.box-icon-top .three-column-box, div#Content-Outer div#Content div.box-icon-top .tbl-four-column {
+        width: 100%; }
+      div#Content-Outer div#Content div.Gallery {
+        height: 200px; }
+        div#Content-Outer div#Content div.Gallery img {
+          height: 200px; }
+      div#Content-Outer div#Content div.innerGallery {
+        height: auto;
+        width: 100%;
+        overflow: hidden; }
+        div#Content-Outer div#Content div.innerGallery img {
+          height: 80px;
+          width: 90px; }
+      div#Content-Outer div#Content div.Outer {
+        margin: 0;
+        padding: 0; }
+        div#Content-Outer div#Content div.Outer div.region {
+          width: 100%; }
+          div#Content-Outer div#Content div.Outer div.region table.two-column {
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            text-align: left; }
+            div#Content-Outer div#Content div.Outer div.region table.two-column td {
+              display: block;
+              text-align: none;
+              width: 100%; }
+              div#Content-Outer div#Content div.Outer div.region table.two-column td div.illustration div.Description {
+                font-size: 10pt;
+                padding-top: 5px; } }
+/********************************
+  End of Import screen
+ ********************************
+ */
+
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,126 @@
+
+
+@function set-notification-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return darken($color, 12.5% ); // Lighter backgorund, return dark color
+  } @else {
+    @return lighten( $color, 58% ); // Darker background, return light color
+  }
+}
+
+
+$txtColor: #000;
+//$hoverTxtColor: #000;
+$hoverTxtColor: #fff;
+$menuBgColor1: #0b7309;
+$menuBgColor2: #816a2c;
+//$menuHoverColor: #e8b70e;
+$menuHoverColor: #3f5d5d;//set-notification-text-color($menuBgColor1) ;
+$menuHoverColor: #0675b3;//set-notification-text-color($menuBgColor1) ;
+$menuBoxShadowColor: #888;
+$numberOfMenuItem:6;
+$menuFont: Tahoma, Geneva, sans-serif;
+@mixin menu
+{ //style the main menu
+    
+ 
+    ul{ 
+            
+            position: absolute;            
+            list-style: none;
+            width:60% ;
+            right:0;
+            //margin:25px 0;
+            //padding:15px 0; 
+            //height:90px;
+            //margin:0;
+            padding:0;
+            margin:0;
+            height:90px;
+            //box-sizing: border-box; 
+           //display table cell reduce the width
+            //display:table-cell;
+           
+            li
+            {
+               //float left remove the space between li 
+                //when the menu float, we can not use text-align property
+                float: left;   
+                position: relative;  
+                //display: table-cell; 
+                //box-sizing: border-box;            
+                //@include BoxShadow($menuBoxShadowColor,0,-1px);
+                line-height:90px;
+                position: relative;
+                /*
+                top: 50%;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                */
+              
+                opacity:1;               
+                width:100% / $numberOfMenuItem; 
+                @include transition(all,.5s,linear);
+                
+                &:hover,  &>a:hover, a.current,div#current-location.current
+                {
+                    color: $hoverTxtColor; 
+                    //background: lightskyblue;
+                    //height:240px;
+                    //text-decoration: underline;
+                   ///background: hsl(280, 100%, 50%);
+                    background: $menuHoverColor; 
+                    @include BoxShadow($menuBoxShadowColor,0,-1px);
+                    ///@include BoxShadow(#7f8181,0,-1px);
+                }
+                &>a{
+                     @include StandardText($txtColor,10pt,"Open Sans",center,300,uppercase);
+                     //@include StandardText($txtColor,10pt,"Vollkorn",center,500,uppercase);
+                     @include TextShadow(#888);
+                     display: block; cursor: pointer;  
+                     
+                     //height:90px;1, $menuBgColor2); 
+                     //@include gradient($menuBgColor1, $menuBgColor2); 
+                     //background: linear-gradient(-45deg,#38aaab 0%, #4befed 50%,#37bebc 100%);
+                     vertical-align: middle;
+                     //line-height: auto;  
+                     width:100%;
+                     //background:$menuBgColor1;
+                     //background: linear-gradient($menuBgColor1, $menuBgColor2); 
+                     //@include gradient($menuBgColor1, $menuBgColor2); 
+                     //background: linear-gradient(-45deg,#38aaab 0%, #4befed 50%,#37bebc 100%);
+                     box-sizing: border-box;
+                    
+                    }
+
+            }
+             li:first-child{ a{border-left:none;}}
+    }
+}         
+/*
+li:hover>ul{ 
+            display:block;  background: #888; width:180px; 
+            //border:none;
+            //border-left: 2px solid $SubMenuBorderColor;
+            //border-right: 2px solid $SubMenuBorderColor;
+            //border-bottom: 2px solid $SubMenuBorderColor;                                                                          	
+            }        
+ul{display:none; position: absolute; }      
+ul>li{display:block; }
+ul>li:hover,ul>li>a:hover{background: #42BBA3; color:#fff;}
+ul>li>a{background:#f5f5f2; display:block; width:180px; color:#000; font-size:10pt;&:before{position:absolute; top:0;margin:0px 60px;@include Arrow(#000);}}
+ul ul {margin: -30px auto auto 179px; width:200px;  }
+ul li ul li a{color:#333; background: azure;}
+//ul>li:hover>ul{ display:block; position: absolute; background: red; }
+//ul>ul li {display:none;postion:absolute;}
+// ul li:hover>ul{display:block; margin-left:18px; background: green;}
+//ul ul>li:hover>ul{display:block; with:200px; background:green;}
+//ul li a {width:80px;height:20px; background:#333; display:block; color:red; }
+
+*/
+   
+
+
+
+

@@ -1,0 +1,13 @@
+ div.float-box
+ {
+     float: left;
+     width:100%/$numberOfHozBox;
+     text-align: center;
+     opacity:0;
+     @include transition(all,.1s,linear);
+     img
+     {
+         max-width:100%/$numberOfHozBox;
+         height: auto;
+     }
+ }

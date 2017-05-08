@@ -1,0 +1,90 @@
+//@import "global";
+/*** Define the common function to style the object**/
+@mixin rotate($deg)
+{
+    transform: rotate($deg); 
+    -webkit-transform: rotate($deg);
+    -ms-transform: rotate($deg); 
+}
+//transition the object
+@mixin transition($property,$time,$dir)
+{
+    transition: $property $time $dir;
+    -webkit-transition: $property $time $dir;
+    -moz-transition: $property $time $dir;
+}
+
+@mixin BoxShadow($color:#000,$h:0,$v:1px,$blur:1px, $spread:0){
+-moz-box-shadow:   $h $v $blur $spread $color;	
+-webkit-box-shadow: $h $v $blur $spread $color;/*	*/
+box-shadow:$h $v $blur $spread $color;
+}
+@mixin TextShadow($color:#000,$h:0,$v:1px, $blur:1px){
+text-shadow:$h $v $blur $color;
+}
+@mixin gradient($from, $to) {
+/* fallback/image non-cover color */
+background-color: $from;
+ 
+/* Firefox 3.6+ */
+background-image: -moz-linear-gradient(left,$from, $to);
+ 
+/* Safari 4+, Chrome 1+ */
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+/* Safari 5.1+, Chrome 10+ */
+background-image: -webkit-linear-gradient(left,$from, $to);
+ 
+/* Opera 11.10+ */
+background-image: -o-linear-gradient(left,$from, $to);
+}
+
+
+@mixin StandardText($Color: #000,$FontSize:12pt,$Font: "Arial, Helvetica, sans-serif",$Align: left,$Weight: bold,$TextTran: normal)
+{
+text-decoration: none;
+font-weight:$Weight;
+font-size:$FontSize;
+font-family: $Font;	
+text-transform:$TextTran;
+text-align:$Align;
+color:$Color;
+}
+
+/**Below may not be used in this work*/
+
+@mixin Arrow($SubMenuBackgroundColor:#ccc)
+{
+position: absolute;	display: block;
+content: '';
+width: 0;height:0;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 7px solid $SubMenuBackgroundColor;
+}
+
+
+@mixin Shorter
+{
+white-space: wrap;	
+overflow: hidden;
+text-overflow: ellipsis;	
+}
+@mixin Thumb
+{			
+img{width:$SuggestThumbWidth - 10px;height:$SuggestThumbHeight - 10px;}
+}	
+
+@mixin IconBase
+{
+    margin: 7px 3px;
+    width:16px;
+    height:16px;
+    line-height:30px;
+}
+@mixin SocialBase
+{
+    background: url('lib/social/facebook.png') 2px 0;
+    width:60px; height:60px;
+    line-height:60px;
+}
